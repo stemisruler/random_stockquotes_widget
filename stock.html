@@ -1,15 +1,18 @@
 <!DOCTYPE html>
-<html>
+<html lang="ko">
 <head>
   <title>주식 명언 출력기</title>
   <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
   <style>
     #quote-character {
       position: fixed;
       bottom: 0;
       left: 0;
-      width: 100px;
-      height: 100px;
+      width: 400px;
+      height: 400px;
       background-image: url('a.png'); /* 이미지 파일명 변경 */
       background-size: contain;
       background-repeat: no-repeat;
@@ -17,11 +20,12 @@
   
     #quote-text {
       position: fixed;
-      bottom: 20px;
-      left: 20px;
-      font-size: 20px;
+      bottom: 150px;
+      left: 200px;
+      font-size: 25px;
       font-style: italic;
       color: #555;
+      
     }
   </style>
   
@@ -30,37 +34,37 @@
   <div id="quote-character"></div>
   <div id="quote-text"></div>
   <script>
-    const quotes = ["The stock market is a device for transferring money from the impatient to the patient.",
-      "The four most dangerous words in investing are: 'this time it's different.'",
-      "It's not whether you're right or wrong that's important, but how much money you make when you're right and how much you lose when you're wrong.",
-      "The stock market is filled with individuals who know the price of everything, but the value of nothing.",
-      "In the short run, the market is a voting machine but in the long run, it is a weighing machine.",
-      "Buy when everyone else is selling and hold when everyone else is buying. This is not merely a catchy slogan. It is the very essence of successful investments.",
-      "Whether we're talking about socks or stocks, I like buying quality merchandise when it is marked down.",
-      "Price is what you pay. Value is what you get.",
-      "It's not how much money you make, but how much money you keep, how hard it works for you, and how many generations you keep it for.",
-      "In investing, what is comfortable is rarely profitable.",
-      "You get recessions, you have stock market declines. If you don't understand that's going to happen, then you're not ready, you won't do well in the markets.",
-      "The intelligent investor is a realist who sells to optimists and buys from pessimists.",
-      "The function of the margin of safety is to render unnecessary an accurate estimate of the future.",
-      "An investment in knowledge pays the best interest.",
-      "The investor of today does not profit from yesterday's growth.",
-      "Investing should be more like watching paint dry or watching grass grow. If you want excitement, take $800 and go to Las Vegas."];
+    const quotes = ["주식 시장은 조급한 사람으로부터 참을성 있는 사람에게 돈을 옮기는 장치입니다.",
+"투자에서 가장 위험한 네 개의 단어는 '이번에는 다르다' 입니다.",
+"중요한 것은 옳거나 그르냐가 아니라, 옳을 때 얼마나 많은 돈을 벌고 그르면 얼마나 많은 돈을 잃느냐입니다.",
+"주식 시장은 모든 것의 가격은 아는데 그 가치는 모르는 개인들로 가득 차 있습니다.",
+"단기적으로는 시장은 투표 기계지만 장기적으로는 그것은 저울입니다.",
+"다른 모든 사람이 팔 때 사고, 모두가 사 때는 잡으세요. 이것은 단순한 구호에 불과한 것이 아니라 성공적인 투자의 본질입니다.",
+"양말이나 주식이든, 나는 그것이 할인되었을 때 고품질 제품을 구매하는 것을 좋아합니다.",
+"가격은 지불하는 것이고 가치는 얻는 것입니다.",
+"중요한 것은 벌이는 돈의 양보다는 그 돈이 얼마나 오래 얼마나 열심히 일하며 몇 세대에 걸쳐 유지되는지입니다.",
+"투자에서 편안한 것은 드물게 수익성이 좋지 않습니다.",
+"경기 침체와 주식 시장 하락이 있습니다. 그것이 일어날 것을 이해하지 못하면 시장에서 잘 할 수 없습니다.",
+"지성 있는 투자자는 낙관주들에게 팔고 비관주들로부터 사는 현실주의자입니다.",
+"여유 마진의 기능은 미래에 대한 정확한 추정을 필요로 하지 않게 만드는 것입니다.",
+"지식에 대한 투자는 최고의 이자를 지불합니다.",
+"오늘의 성장에서 이익을 얻는 것은 오늘의 투자자에게 이익을 주지 않습니다.",
+"투자는 마치 페인트가 마르거나 잔디가 자라는 것을 지켜보는 것과 같아야 합니다. 만약 도박같은 스릴을 원한다면 $800을 가져가서 라스베이거스로 가세요."
+
+];
 
     function showQuote() {
       const quote = quotes[Math.floor(Math.random() * quotes.length)];
       const character = document.getElementById("quote-character");
       const text = document.getElementById("quote-text");
       text.innerText = quote;
-      character.style.right = "-200px";
-      text.style.right = "-200px";
-      setTimeout(() => {
-        character.style.right = "0";
-        text.style.right = "20px";
-      }, 500);
     }
 
-    setInterval(showQuote, 500);
+// 첫 대사가 나오는 시간을 1500ms로 설정
+setTimeout(showQuote, 1500);
+
+// 이후에는 대사가 화면에 표시되는 시간을 4000ms로 설정하여 반복적으로 실행
+setInterval(showQuote, 10000);
   </script>
 </body>
 </html>
